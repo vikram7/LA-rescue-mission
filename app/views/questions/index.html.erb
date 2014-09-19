@@ -1,0 +1,18 @@
+Add a question here:<br>
+<%= form_for @question do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :description %><br>
+  <%= f.text_area :description %><br>
+  <%= f.submit %>
+<% end %><br>
+
+
+Here is a list of questions and their descriptions that have been asked before:<br>
+<ul>
+<% @questions.each do |question| %>
+  <b>Title:</b><br><%= link_to question.title, question_path(question) %><br>
+  <small>Updated at: <%=question.updated_at %></small><br><br>
+<% end %>
+</ul>
+

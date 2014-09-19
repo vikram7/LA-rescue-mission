@@ -1,0 +1,15 @@
+<b>Title:</b><br>
+<%= @question.title %><br><br>
+<b>Description:</b><br>
+<%= @question.description %><br><br>
+
+<br>
+Add a new answer <%= link_to "here", new_answer_path(@question) %><br>
+
+<br>
+Here are the current answers to the question:
+<ul>
+<% @answers.each do |answer| %>
+  <%= answer.description %><br>
+<% end %>
+</ul>
